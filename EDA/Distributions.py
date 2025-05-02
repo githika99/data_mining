@@ -27,7 +27,7 @@ def pie_chart(df, codebook):
     feature_code_mappings = l[0]
     feature_domains = l[1]
     print(feature_code_mappings, "/n/n")
-    features_to_be_plotted = ['MOMALIV2', 'MOMCOD2', 'STOPMEN2', 'SYMPTOM2', 'HOTFLA2', 'HEVYPER2', 'SLEEPRO2', 'PSYPROB2', 'OTHRPRO2', 'OTHRPRS2', 'HERMENO2', 'GENMENO2', 'ATTIMEN2',
+    features_to_be_plotted = ['MOMALIV2', 'STOPMEN2', 'SYMPTOM2', 'HOTFLA2', 'HEVYPER2', 'SLEEPRO2', 'PSYPROB2', 'OTHRPRO2', 'OTHRPRS2', 'HERMENO2', 'GENMENO2', 'ATTIMEN2',
                               'ARTHRMO2', 'HIBPMOM2', 'DIABMOM2', 'STRKMOM2', 'HEARTMO2', 'OHDMOM2', 'HIPMOM2', 'OSTEOMO2', 'SPINEMO2', 'HUMPMOM2', 'COLONMO2', 'DEPRMOM2', 'DADALIV2' , 
                               'ARTHRDA2', 'HIBPDAD2', 'DIABDAD2', 'STRKDAD2', 'HEARTDA2', 'OHDDAD2', 'HIPDAD2', 'OSTEODA2', 'SPINEDA2', 'HUMPDAD2', 'COLONDA2', 'DEPRDAD2']
 
@@ -60,39 +60,62 @@ def pie_chart(df, codebook):
 
 # for features we want to find a distribution of 
 # ex. contains 'years' as a measurement
+# only feature that we need to look at codebook for is AGESTOP2
+# the rest of the features are text or years
 def histogram(df, codebook):
-    l = encoding(codebook)
-    feature_code_mappings = l[0]
-    feature_domains = l[1]
-    features_to_be_plotted = ['MOMDIED2', 'MOMCOD2', 'MOMAGE2', 'AGESTOP2', 'DADDIED2', 'DADCOD2', 'DADAGE2']
+    #l = encoding(codebook)
+    #feature_code_mappings = l[0]
+    #feature_domains = l[1]
+    # features_to_be_plotted = ['MOMDIED2', 'MOMCOD2', 'MOMAGE2', 'AGESTOP2', 'DADDIED2', 'DADCOD2', 'DADAGE2']
+    features_to_be_plotted = ['MOMDIED2', 'MOMCOD2', 'MOMAGE2', 'DADDIED2', 'DADCOD2', 'DADAGE2']
 
-    for i in features_to_be_plotted:    
-        label_map = feature_code_mappings[i]
+    # MOMCOD2 and DADCOD2 are text
+    # everything else is years
 
-        # Count the occurrences of each value (ignore -8 if desired)
-        counts = df[i].value_counts().reindex(feature_domains[i], fill_value=0)
+    for i in features_to_be_plotted:   
+        if i == "MOMCOD2" or i == "DADCOD2": # textual data
+            counts = df[i]
 
-        # Get codes and labels
-        codes = counts.index.tolist()
-        values = counts.values
-        labels = [label_map[code] for code in codes]
+            print(counts)
+            # Get codes and labels
+            codes = counts.index.tolist()
+            values = counts.values
 
-        # Plot histogram (as a bar plot)
-        plt.bar(codes, values, tick_label=labels)
-        plt.title(f'{i} Distribution')
-        plt.ylabel('Count')
-        plt.xticks(rotation=45, ha='right')
-        plt.tight_layout()
-        plt.savefig(f'./{i}_distribution.png')
-        plt.clf()  # Clear figure for next plot
+            # Plot histogram (as a bar plot)
+            plt.bar(codes, values, color='#ec4899')
+            plt.title(f'{i} Distribution')
+            plt.ylabel('Count')
+            plt.xlabel('Cause of Death') 
+            plt.xticks(rotation=45, ha='right')
+            plt.tight_layout()
+            plt.savefig(f'./{i}_distribution.png')
+            plt.clf()  # Clear figure for next plot
+        
+        else: 
+            counts = pd.to_numeric(df[i], errors='coerce')
+            counts = counts[counts >= 0].value_counts().sort_index()
+
+            # Get codes and labels
+            codes = counts.index.tolist()
+            values = counts.values
+
+            # Plot histogram (as a bar plot)
+            plt.bar(codes, values, color='#ec4899')
+            plt.title(f'{i} Distribution')
+            plt.ylabel('Count')
+            plt.xlabel('Years')
+            plt.xticks(rotation=45, ha='right')
+            plt.tight_layout()
+            plt.savefig(f'./{i}_distribution.png')
+            plt.clf()  # Clear figure for next plot
 
 if __name__ == "__main__":
     # --- Load your main dataset and codebook ---
     df = pd.read_csv('../data/Raw_Data/30181-0001-Data.tsv', sep='\t', quoting=3, engine='python')
     codebook = pd.read_csv('../data/data_dictionary.csv')
 
-    pie_chart(df, codebook)
-    #histogram(df, codebook)
+    #pie_chart(df, codebook)
+    histogram(df, codebook)
     
 
 
