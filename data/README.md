@@ -4,5 +4,5 @@ The following screenshots are from the codebook published along with the 'Study 
 
 The full codebook can be found as a pdf in this repo. We included the relevant pages that allow one to understand the data. 
 
-![Alt Text](/Users/githika/Screenshots/codebook1.png)
+![Alt Text](./codebook_screenshots/codebook1.png)
 
