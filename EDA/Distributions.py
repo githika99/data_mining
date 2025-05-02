@@ -74,7 +74,11 @@ def histogram(df, codebook):
 
     for i in features_to_be_plotted:   
         if i == "MOMCOD2" or i == "DADCOD2": # textual data
-            counts = df[i]
+            counts = df[i].dropna()
+            counts = counts.str.strip().str.lower()
+            counts = counts[(counts != "") & (counts != "-8")]
+            counts = counts.value_counts()
+            counts = counts[counts > 3]
 
             print(counts)
             # Get codes and labels
@@ -82,13 +86,14 @@ def histogram(df, codebook):
             values = counts.values
 
             # Plot histogram (as a bar plot)
+            plt.figure(figsize=(12, 6))
             plt.bar(codes, values, color='#ec4899')
-            plt.title(f'{i} Distribution')
+            plt.title(f'{i} Distribution\nOnly causes of death with more than 3 counts are plotted.')
             plt.ylabel('Count')
             plt.xlabel('Cause of Death') 
             plt.xticks(rotation=45, ha='right')
             plt.tight_layout()
-            plt.savefig(f'./{i}_distribution.png')
+            plt.savefig(f'./bar_charts/{i}_distribution.png')
             plt.clf()  # Clear figure for next plot
         
         else: 
@@ -106,7 +111,7 @@ def histogram(df, codebook):
             plt.xlabel('Years')
             plt.xticks(rotation=45, ha='right')
             plt.tight_layout()
-            plt.savefig(f'./{i}_distribution.png')
+            plt.savefig(f'./bar_charts/{i}_distribution.png')
             plt.clf()  # Clear figure for next plot
 
 if __name__ == "__main__":
