@@ -116,12 +116,23 @@ def histogram(df, codebook):
 
 if __name__ == "__main__":
     # --- Load your main dataset and codebook ---
-    df = pd.read_csv('../data/Raw_Data/30181-0001-Data.tsv', sep='\t', quoting=3, engine='python')
+    df = pd.read_csv('../data/Raw_Data/SWAN1.tsv', sep='\t', quoting=3, engine='python')
+    df2 = pd.read_csv('../data/Raw_Data/SWAN2.tsv', sep='\t', quoting=3, engine='python')
     codebook = pd.read_csv('../data/data_dictionary.csv')
 
     #pie_chart(df, codebook)
-    histogram(df, codebook)
-    
+    #histogram(df, codebook)
+
+    # count how many overlapping datapoints there are for SWAN1 and SWAN2
+    count1 = df["SWANID"]
+    count2 = df2["SWANID"]
+
+    # count number of times a value in count1 matches a value in count2
+    print("SWAN1 len", len(count1))
+    print("SWAN2 len", len(count2))
+
+    common = set(count1) & set(count2)
+    print("common", len(common))
 
 
 

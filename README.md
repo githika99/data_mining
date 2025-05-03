@@ -4,3 +4,9 @@ Project Organizaiton:
 EDA - folder contains distributions of the features we are interested in. A summary of these findings is provided. 
 Models - folder contians regression models used to assess correlation between features. Folder also contians PCA and clustering done to analyze the features. A summary of these findings is present.
 Evaluation - folder contains evalution done on the various models. A summary with plots of these evaluation metrics is present. 
+
+
+Todo:
+* make readme doc with visualizations
+* visualize: NUMBROS2, NUMSIS2, and the ones I made BRECANUM and SISMENO
+

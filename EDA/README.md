@@ -4,6 +4,7 @@ The Data Dictionary is a csv file that specifies, for each feature, the domain a
 
 We plotted distributions of the following features of the data:
 
+SWAN 1:
 Mom:
     MOMALIV2 - Is your biological mother (the one who gave birth to you) still living? - PIE CHART
         No - 1
@@ -158,4 +159,132 @@ Data we're creating:
     
     SISMENO - age at which sister(s) stopped having periods 
         Distribution of non -8 values in these columns: AGETO12, AGETO22, AGETO32, AGETO42, AGETO52, AGETO62, AGETO72, AGETO82, AGETO92, AGET102, AGET112, AGET122, AGET132, AGET142, AGET152, AGET162
-        
+
+
+
+Which attributes in SWAN2 focus on women's health.
+What are some possible ideas of what we can predict? 
+SWAN2:
+    SWAN1 len 2829
+    SWAN2 len 2748
+    common 2729
+
+
+Check Day that they did each to see which was completed first. 
+PREGNAN2 - are you pregnant
+
+Since your last visit have you ...
+FERTIL12 FERTIL22 - Fertility medications to help you get pregnant (Pergonal, Clomid)?
+BCP12 BCP22 - Birth Control Pills
+ESTROG12 ESTROG22 - Estrogen pills
+ESTRDA12 ESTRDA22 - Estrogen pill daily?
+ESTRNJ12 ESTRNJ22 - Estrogen by injection or patch
+COMBIN12 COMBIN22 - combination estrogen/progestin 
+PROGES12 PROGES22 - progestin pill
+PROGDA12 PROGDA22 - progestin pill daily?
+
+Reason for taking hormones, including birth control pills. (1 - No, 2 - Yes)
+
+REDUHAR2 - To reduce the risk of heart disease
+OSTEOPO2 - To reduce the risk of osteoporosis
+MENOSYM2 - To relieve menopausal symptoms
+YOUNGLK2 - To stay young-looking
+HCPADVI2 - A health care provider advised me to take them
+FRNADVI2 - A friend or relative advised me to take them
+IMPRMEM2 - To improve my memory
+REGPERI2 - To regulate periods
+HORMOTH2 - Other
+    - specified in HORMSPE2
+DONTKNO2 - Don't Know
+
+For those that since thier last study visit, they started taking some hormones and then stopped. What were their reasons for stopping? (1 - No, 2 - Yes)
+
+PRBBLEE2 - PROBLEMS WITH BLEEDING
+HAVEPER2 - DIDN’T LIKE HAVING PERIODS
+LIKEFEL2 - DIDN’T LIKE HOW I FELT ON THEM
+SIDEEFF2 - WORRIED ABOUT POSSIBLE SIDE EFFECTS
+CANCER2 - WORRIED ABOUT CANCER
+ADVISTO2 - MY HEALTH CARE PROVIDER ADVISED ME TO STOP (FOR MEDICAL REASONS)
+EXPENSI2 - TOO EXPENSIVE
+NOLIKE2 - DON’T LIKE TO TAKE ANY MEDICATIONS
+NOREMEB2 - COULDN’T REMEMBER TO TAKE THEM
+DNTKNOW2 - DON’T KNOW
+STOPOTH2 - Other
+    - specified in STOPSPE2
+No reason given - NOREASO2
+
+Page 18 -- general health conditions
+Page 20 -- OB GYN specific medical treatments
+Page 21 -- about period
+
+HOURSPA2 - how many hours do you work a week for pay
+    ≤ 10 ........................................................................................................................ 1 11-19 ...................................................................................................................... 2 20-34 ...................................................................................................................... 3 35-40 ...................................................................................................................... 4 41-60 ...................................................................................................................... 5 >60 ......................................................................................................................... 6
+MARITAL2 - Marital Status
+    Single/never married.............................................................................................. 1 Currently married or living as married .................................................................. 2 Separated ............................................................................................................... 3 Widowed................................................................................................................ 4 Divorced ................................................................................................................ 5 DON’T KNOW .................................................................................................... -8 REFUSED ........................................................................................................... -7
+
+
+Page 32 - about hospital visits, for OB GYN stuff
+
+HLTHSER2 - Since your last study visit, are there any health services that you needed but did not receive? No 1 Yes 2
+
+HLTHSV12, HLTHSV22, HLTHSV32 - What kind of health services?
+
+PRIMREA2 What is the primary reason for not receiving these health services? - Insurance or health plan does not cover................................................................. 1 Cannot afford......................................................................................................... 2 Travel distance / lack of transportation................................................................. 3 No health care provider ......................................................................................... 4 Too busy/ didn’t have the time .............................................................................. 5 Other ...................................................................................................................... 6
+
+UTI2 - have you had any urinary tract infections? (No -1 Yes - 2)
+
+INCOME2 - total family income
+LESS THAN $19,999............................................................................................ 1 $20,000 TO $49,999 .............................................................................................. 2 $50,000 TO $99,999 .............................................................................................. 3 $100,000 OR MORE ............................................................................................. 4 REFUSED ........................................................................................................... -7 DON’T KNOW ................................................................................................... -8
+
+PROVIDE2 - Do you have a health care provider from whom you primarily get your care for women's health conditions? (1 - No, 2- Yes)
+
+TYPEPRA2 - What type of practice is this?
+Hospital ............................................................................................................... 1 Office................................................................................................................... 2 Clinic ................................................................................................................... 3 Other ................................................................................................................... 4
+Specify:____________________________________ #SPECIF12
+
+
+SPECIAL2 - Which of the following best describes this provider’s specialty.
+A family practitioner ............................................................................................. 1 An internist .......................................................................................................... 2 A gynecologist ..................................................................................................... 3 A nurse practitioner or physician assistant........................................................... 4 A naturopath (one who uses natural (non-medicinal) therapy)............................. 5 Other ................................................................................................................... 6
+Specify:____________________________________ SPECIFY2
+No specialty ............................................................................................... 7 Don’t know ................................................................................................ -8
+
+VISIPRO2 - Since your last study visit, about how many times did you see or talk to this health care provider regarding your own health? (count)
+
+ROLE2 - Please indicate what role you prefer that this health care provider take in deciding about your health
+(scale 1 to 7)
+My provider’s role is to provide information and let me make my own decision
+1234567
+My provider’s role is toevaluate my situation and make the best decision for me
+
+Following are 1 - almost never, 2 - seldom, 3 - neutral, 4 - often, 5 - almost always
+
+ENCOURA2 - My heath care provider encourages me to make my own decisions regardingtreatment plans.
+
+DISCUSS2 - When my health care provider recommends treatment plans he/she also discusses alternatives.
+
+REFUSAL2 - If I refuse treatment, my health care provider respects my decision.
+
+PARTICI2 - My health care provider encourages me to participate in decisions about my health care.
+
+ALTERNA2 - My health care provider seriously considers any alternative treatments that I suggest.
+
+CHANGES2 - If I tell my health care provider my treatment plan is too difficult or too much trouble, he/she changes it.
+
+JUDGEMN2 - My health care provider encourages me to trust my own judgment about my health care.
+
+Page 59 - checking if you've had serious OB GYN related health probelms
+
+STATUS2 - menopausal status 1 = Post by BSO (Bilateral Salpingo Oophorectomy)
+2 = Natural Post
+3 = Late Peri
+4 = Early Peri
+5 = Pre
+6 = Pregnant/breastfeeding
+7 = Unknown due to HT use
+8 = Unknown due to hysterectomy
+
+RACE - 1: Black/African American
+2: Chinese/Chinese American
+3: Japanese/Japanese American 4: Caucasian/ White Non-Hispanic 5: Hispanic
+
+AGE2 - Age
