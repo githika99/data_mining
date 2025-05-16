@@ -11,7 +11,7 @@ if __name__ == "__main__":
     target_column = "HLTHSER2"
 
     # Split into features (X) and target (y)
-    X = df.drop(columns=["HLTHSER2", "HLTHSV12", 'HLTHSV22', 'HLTHSV32', 'PRIMREA2', 'REASSPE2'])
+    X = df.drop(columns=["HLTHSER2", "HLTHSV12", 'HLTHSV22', 'HLTHSV32', 'PRIMREA2']) #, 'REASSPE2'
     y = df[target_column]
 
     # Split into train/test (optional, but good practice)
@@ -36,5 +36,7 @@ if __name__ == "__main__":
     plt.title("Top 10 Important Features (Decision Tree)")
     plt.xlabel("Importance Score")
     plt.tight_layout()
-    plt.show()
-
+    
+    scree_path = "/Users/githika/GitHub/data_mining/Evaluation/Decision_Tree_Results.png"
+    plt.savefig(scree_path)
+    plt.close()
