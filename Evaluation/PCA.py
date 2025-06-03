@@ -35,7 +35,7 @@ def run_pca_and_save_with_scree(df_encoded, save_dir="/Users/githika/GitHub/data
 
     # Save scree plot
     os.makedirs(save_dir, exist_ok=True)
-    scree_path = os.path.join(save_dir, "scree_plot.png")
+    scree_path = os.path.join(save_dir, "scree_plot_2.png")
     plt.savefig(scree_path)
     plt.close()
     print(f"Scree plot saved to {scree_path}")
@@ -63,10 +63,9 @@ def print_top_features_per_component(pca, feature_names, top_n=5):
             print(f"  {name}: {val:.4f}") 
     
 
-
 if __name__ == "__main__":
     # Assuming df and value_to_int are loaded & processed as before
-    df_encoded = pd.read_csv("/Users/githika/GitHub/data_mining/Evaluation/study2_encoded.csv")  # or use df_encoded directly if already in memory
+    df_encoded = pd.read_csv("/Users/githika/GitHub/data_mining/Evaluation/study1_2_encoded.csv")  # or use df_encoded directly if already in memory
 
     pca = run_pca_and_save_with_scree(df_encoded) 
 
