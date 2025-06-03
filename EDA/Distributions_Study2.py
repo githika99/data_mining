@@ -37,41 +37,49 @@ def plot_and_save_all_distributions(df_encoded, value_to_int, save_dir="/Users/g
         plt.close('all')
 
 
+def process_data(df1, df2, name):
+    # Step 1: Extract headers and data separately for both
+    header1 = df1.iloc[0]
+    data1 = df1.iloc[1:].copy()
+    data1.columns = header1
+    data1.reset_index(drop=True, inplace=True)
 
+    header2 = df2.iloc[0]
+    data2 = df2.iloc[1:].copy()
+    data2.columns = header2
+    data2.reset_index(drop=True, inplace=True)
 
+    # Step 2: Perform SQL-style inner join on 'SWANID'
+    merged_df = pd.merge(data1, data2, on='SWANID', how='inner')
 
-def process_data(df, name):
-    # Step 1: Keep header and data separate
-    header = df.iloc[0]       # first row is header
-    data = df.iloc[1:].copy() # everything else is data
-    data.reset_index(drop=True, inplace=True)
+    merged_df.to_csv('/Users/githika/GitHub/data_mining/data/Processed_Data/SWAN1_2.tsv', sep='\t', index=False)
+    # Step 3: Get all unique values in the merged data
+    all_unique_values = pd.unique(merged_df.values.ravel())
 
-    # Step 2: Get all unique values in the data
-    all_unique_values = pd.unique(data.values.ravel())
-
-    # Step 3: Create a consistent global mapping
+    # Step 4: Create global mapping
     value_to_int = {val: idx for idx, val in enumerate(all_unique_values)}
 
-    # Step 4: Encode the data
-    df_encoded = data.applymap(lambda x: value_to_int[x])
+    # Step 5: Encode merged data
+    df_encoded = merged_df.applymap(lambda x: value_to_int[x])
 
-    # (Optional) restore header column names (will be integers otherwise)
-    df_encoded.columns = header
-
-    # Save mapping to a JSON file
+    # Save mapping to JSON
     with open("value_to_int.json", "w") as f:
         json.dump(value_to_int, f, indent=2)
 
-    df_encoded.to_csv('/Users/githika/GitHub/data_mining/Evaluation/'+name, index=False)
+    # Save encoded DataFrame
+    df_encoded.to_csv('/Users/githika/GitHub/data_mining/Evaluation/' + name, index=False)
 
     return df_encoded, value_to_int
 
 
 
+
 if __name__ == "__main__":
     # Load TSV file (including header as first row)
-    df1 = pd.read_csv('../data/Raw_Data/SWAN2.tsv', sep='\t', dtype=str, header=None)
-    df1, value_to_int1 = process_data(df1, 'study1_encoded.csv') 
+    df1 = pd.read_csv('../data/Raw_Data/SWAN1.tsv', sep='\t', dtype=str, header=None, on_bad_lines='skip')
+    df2 = pd.read_csv('../data/Raw_Data/SWAN2.tsv', sep='\t', dtype=str, header=None)
+
+    df1, value_to_int1 = process_data(df1, df2, 'study1_2_encoded.csv') 
 
     """
     df = pd.read_csv('../data/Raw_Data/SWAN2.tsv', sep='\t', dtype=str, header=None)
