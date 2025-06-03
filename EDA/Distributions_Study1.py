@@ -120,6 +120,22 @@ if __name__ == "__main__":
     df2 = pd.read_csv('../data/Raw_Data/SWAN2.tsv', sep='\t', quoting=3, engine='python')
     codebook = pd.read_csv('../data/data_dictionary.csv')
 
+    results = []
+    # print data dictionary for df2
+    for col in df.columns:
+        results.append((col, " "))
+    
+    sr = pd.DataFrame(results, columns=['Feature', 'Meaning'])
+    sr.to_csv("/Users/githika/GitHub/data_mining/data/SWAN_1_Names.csv", sep='\t', index=False)
+
+    results = []
+    # print data dictionary for df2
+    for col in df2.columns:
+        results.append((col, " "))
+    
+    sr = pd.DataFrame(results, columns=['Feature', 'Meaning'])
+    sr.to_csv("/Users/githika/GitHub/data_mining/data/SWAN_2_Names.csv", sep='\t', index=False)
+
     #pie_chart(df, codebook)
     #histogram(df, codebook)
 

@@ -40,7 +40,7 @@ def plot_and_save_all_distributions(df_encoded, value_to_int, save_dir="/Users/g
 
 
 
-def process_data(df):
+def process_data(df, name):
     # Step 1: Keep header and data separate
     header = df.iloc[0]       # first row is header
     data = df.iloc[1:].copy() # everything else is data
@@ -62,21 +62,21 @@ def process_data(df):
     with open("value_to_int.json", "w") as f:
         json.dump(value_to_int, f, indent=2)
 
-    df_encoded.to_csv('/Users/githika/GitHub/data_mining/Evaluation/study2_encoded.csv', index=False)
+    df_encoded.to_csv('/Users/githika/GitHub/data_mining/Evaluation/'+name, index=False)
 
     return df_encoded, value_to_int
 
 
 
-
-
 if __name__ == "__main__":
     # Load TSV file (including header as first row)
+    df1 = pd.read_csv('../data/Raw_Data/SWAN2.tsv', sep='\t', dtype=str, header=None)
+    df1, value_to_int1 = process_data(df1, 'study1_encoded.csv') 
+
+    """
     df = pd.read_csv('../data/Raw_Data/SWAN2.tsv', sep='\t', dtype=str, header=None)
-    df, value_to_int = process_data(df) 
+    df, value_to_int = process_data(df, 'study2_encoded.csv') 
     plot_and_save_all_distributions(df, value_to_int)
+    """
 
 
-
-
-# FIX THIS 
