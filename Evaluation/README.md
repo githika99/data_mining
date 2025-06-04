@@ -38,18 +38,30 @@ Principal Component 5:
   SILVN152: 0.1393 - Is your 15th sister sill living?
 
   ## Decision Tree Results
-
-  Top features by importance:
-    EMOACCO2    0.130214 
-    PAPSMEA2    0.033376
-    LMPDAY2     0.026719
-    BMI2        0.023792
-    SYSBP12     0.019795
-    E2AVE2      0.018949
-    OTHRPRS2    0.017136
-    NOTSMAR2    0.015087
-    BCDIAP12    0.015056
-    SERIPRO2    0.014512
+Features with importance > 0.1:
+EMOACCO2    0.130214
+PAPSMEA2    0.033376
+LMPDAY2     0.023047
+OTHRPRS2    0.017136
+VLNTHR12    0.016892
+NOTSMAR2    0.015087
+SERIPRO2    0.014512
+AFRAIDO2    0.014320
+BCDIAP12    0.014134
+SISAGE12    0.013562
+MARITAL2    0.013484
+TIRED2      0.013191
+HIP2        0.013103
+HEIGHT2     0.012949
+POORSER2    0.012869
+MONEYPR2    0.012683
+SYSBP12     0.012408
+WATCHTV2    0.011882
+SPEDAY2     0.011139
+DIABDAD2    0.011037
+PHYACCO2    0.011011
+COUGHIN2    0.011005
+CONTROL2    0.010447
 
     EMOACCO2 - During the past 4 weeks, have you had any of the following problems with your work or other regular daily activities as a result of any emotional problems (such as feeling depressed or anxious)? Accomplished less than you would like?<br>
 

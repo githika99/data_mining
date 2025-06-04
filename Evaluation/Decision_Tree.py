@@ -37,34 +37,7 @@ if __name__ == "__main__":
 
     # Get feature importances
     importances = pd.Series(clf.feature_importances_, index=X.columns)
-    importances = importances.sort_values(ascending=False)
-
-    important_features = importances[importances > 0.01]
-
-    print("Features with importance > 0.01:")
-    print(important_features)
-
-    cumulative_importance = np.cumsum(importances)
-
-    # Plot
-    plt.figure(figsize=(8, 5))
-    plt.plot(cumulative_importance)
-    plt.axhline(y=0.9, color='r', linestyle='--')
-    plt.xlabel("Number of Top Features")
-    plt.xticks(rotation=45, ha='right')
-    plt.ylabel("Cumulative Importance")
-    plt.title("Cumulative Feature Importance (Decision Tree)")
-    plt.grid(True)
-    plt.tight_layout()
-    scree_path = "/Users/githika/GitHub/data_mining/Evaluation/cumulative_importance.png"
-    plt.savefig(scree_path)
-    plt.clf()
-    plt.close() 
-
-
-    # Print top features
-    print("Top features by importance:")
-    print(importances.head(10))
+    important_features = importances[importances > 0.01].sort_values(ascending=False)
 
     # dic = {"EMOACCO2":"Accomplished less past month due to emotional problem",
     #        "PAPSMEA2":"Pap smear since last visit",
@@ -78,12 +51,16 @@ if __name__ == "__main__":
     #        "PHYSPLE2":"Relationship with Partner is Physically Pleasurable"}
     
     # Plot feature importances
-    plt.figure(figsize=(10, 6))
-    importances.head(10).plot(kind='barh', color='skyblue')
-    plt.gca().invert_yaxis()
-    plt.title("Top 10 Important Features (Decision Tree)")
-    plt.xlabel("Importance Score")
+    plt.figure(figsize=(max(10, len(important_features) * 0.4), 6))
+    important_features.plot(kind='bar', color='skyblue')
+
+    plt.xticks(rotation=45, ha='right')
+    plt.title("Features with Importance > 0.01")
+    plt.ylabel("Importance Score")
     plt.tight_layout()
+    plt.show()
+
+    print(important_features)
 
     # Map feature codes to descriptive questions
     # top_features = importances.head(10)
