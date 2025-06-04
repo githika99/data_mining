@@ -58,7 +58,6 @@ if __name__ == "__main__":
     plt.title("Features with Importance > 0.01")
     plt.ylabel("Importance Score")
     plt.tight_layout()
-    plt.show()
 
     print(important_features)
 

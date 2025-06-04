@@ -348,6 +348,18 @@ CHILDMO2 - A child moved out of the house or left the area?
 RESPCAR2 - Took on responsibility for the care of another child, grandchild, parent, other family member or friend? 
 LEGALPR2 - Family member had legal problems or a problem with police?
 
+A close relative (husband/partner, child or parent) died. . .
+HUSBDIE2 - husband/partner? 
+CHLDDIE2 - child?
+PRNTDIE2 -  parent?
+
+CLOSDIE2 - A close friend or family member other than a husband/partner, child or parent died?
+SELFVIO2 - Major accident, assault, disaster, robbery or other violent event happened to yourself?
+FAMLVIO2 - Major accident, assault, disaster, robbery or other violent event happened to a family member? 
+PHYSILL2 - Serious physical illness, injury or drug/alcohol problem in family member, partner or close friend?
+MAJEVEN2 - Other major event not included above?
+
+Rewarding life measures:
 
 
 Household: 
@@ -525,3 +537,6 @@ HLTHSV12, HLTHSV22, HLTHSV32 - What kind of health services?
 
 PRIMREA2 What is the primary reason for not receiving these health services? - Insurance or health plan does not cover 1, Cannot afford 2, Travel distance / lack of transportation 3, No health care provider 4, Too busy/ didn’t have the time 5, Other 6
 REASSPE2 - Other text 
+
+All variables related to target variable: HLTHSER2, HLTHSV12, HLTHSV22, HLTHSV32, PRIMREA2, REASSPE2
+

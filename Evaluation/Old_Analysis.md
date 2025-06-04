@@ -18,7 +18,7 @@ Principal Component 2:<br>
 
 Principal Component 3:<br>
   THYRREM2: 0.2017 - Since your last study visit, I have my thyroid gland removed<br>
-  OSTEPR12: 0.2009 - OSTEPR11 Do you take medications to prevent or treat osteoporosis (brittle or thinning bones such as Fosamax, Didronel, Evista, Miacalcin, Rocaltrol)?<br>
+  OSTEPR12: 0.2009 - Do you take medications to prevent or treat osteoporosis (brittle or thinning bones such as Fosamax, Didronel, Evista, Miacalcin, Rocaltrol)?<br>
   FERTIL12: 0.2009 - Since your last study visit have you taken any fertility medications to help you get pregnant (Pergonal, Clomid)? <br>
   HEARTAT2: 0.1913 - Since your last study visit, has a doctor, nurse practitioner or other health care provider told you that you had a heart attack or treated you for it? <br>
   PRGNANT2: 0.1913 - Since your last study visit, have you been pregnant? Please include live births, stillbirths, abortions, miscarriages, tubal or ectopic pregnancies.<br><br>
