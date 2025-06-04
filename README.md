@@ -6,7 +6,3 @@ Models - folder contians regression models used to assess correlation between fe
 Evaluation - folder contains evalution done on the various models. A summary with plots of these evaluation metrics is present. 
 
 
-Todo:
-* make readme doc with visualizations
-* visualize: NUMBROS2, NUMSIS2, and the ones I made BRECANUM and SISMENO
-
