@@ -1,4 +1,4 @@
-This file will contain a summary of the evaluation metrics of various models. There will be justification for picking the best model.<br>
+This Analysis is just on the SWAN2 dataset. I did not include this in my final evaluation. <br>
 
 ## PCA Results: <br>
 ![PCA Results](/Users/githika/GitHub/data_mining/Evaluation/scree_plot.png)

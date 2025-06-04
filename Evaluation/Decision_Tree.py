@@ -3,7 +3,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 
-def remove_high_cardinality_features(df, threshold=0.60):
+def remove_high_cardinality_features(df, threshold=0.50):
     """Remove features where the proportion of unique values is too high."""
     high_cardinality_cols = [
         col for col in df.columns
