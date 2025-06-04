@@ -16,7 +16,7 @@ def remove_high_cardinality_features(df, threshold=0.50):
 
 if __name__ == "__main__":
     # Load your encoded dataframe
-    df = pd.read_csv("/Users/githika/GitHub/data_mining/Evaluation/study1_2_encoded.csv")  # or use df_encoded directly if already in memory
+    df = pd.read_csv("data_mining/data/Processed_Data/study1_2_encoded.csv")  # or use df_encoded directly if already in memory
 
     # Specify your response variable (change this to your actual column name)
     target_column = "HLTHSER2"
@@ -73,7 +73,7 @@ if __name__ == "__main__":
     # plt.xlabel("Importance Score")
     # plt.tight_layout()
     
-    scree_path = "/Users/githika/GitHub/data_mining/Evaluation/Decision_Tree_Results_4.png"
+    scree_path = "data_mining/Evaluation/plots/Decision_Tree_Results.png"
     plt.savefig(scree_path)
     plt.close()
 

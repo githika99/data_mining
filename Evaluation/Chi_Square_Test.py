@@ -22,7 +22,7 @@ def print_top_features_per_component(pca, feature_names, top_n=5):
         for name, val in top_features:
             print(f"  {name}: {val:.4f}") 
 
-def chi_square_feature_importance(df, target_col = "HLTHSER2", save_dir = "/Users/githika/GitHub/data_mining/Evaluation/"):
+def chi_square_feature_importance(df, target_col = "HLTHSER2", save_dir = "data_mining/Evaluation/plots/"):
     results = []
     relevant_features = []
 
@@ -93,7 +93,7 @@ def chi_square_feature_importance(df, target_col = "HLTHSER2", save_dir = "/User
     return sr
 
 if __name__ == "__main__":
-    df = pd.read_csv("/Users/githika/GitHub/data_mining/Evaluation/study1_2_encoded.csv")  # or use df_encoded directly if already in memory
+    df = pd.read_csv("data_mining/data/Processed_Data/study1_2_encoded.csv")  # or use df_encoded directly if already in memory
     print("calling function")
     chi2_df = chi_square_feature_importance(df, target_col="HLTHSER2")
     print(chi2_df)

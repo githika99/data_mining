@@ -8,7 +8,7 @@ from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
 import os
 
-def run_pca_and_save_with_scree(df_encoded, save_dir="/Users/githika/GitHub/data_mining/Evaluation/"):
+def run_pca_and_save_with_scree(df_encoded, save_dir="data_mining/Evaluation/plots/"):
     # Standardize data
     scaler = StandardScaler()
     df_scaled = scaler.fit_transform(df_encoded)
@@ -65,7 +65,7 @@ def print_top_features_per_component(pca, feature_names, top_n=5):
 
 if __name__ == "__main__":
     # Assuming df and value_to_int are loaded & processed as before
-    df_encoded = pd.read_csv("/Users/githika/GitHub/data_mining/Evaluation/study1_2_encoded.csv")  # or use df_encoded directly if already in memory
+    df_encoded = pd.read_csv("data_mining/data/Processed_Data/study1_2_encoded.csv")  # or use df_encoded directly if already in memory
 
     pca = run_pca_and_save_with_scree(df_encoded) 
 
