@@ -2,6 +2,7 @@ import pandas as pd
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
+import numpy as np
 
 def remove_high_cardinality_features(df, threshold=0.50):
     """Remove features where the proportion of unique values is too high."""
@@ -37,6 +38,29 @@ if __name__ == "__main__":
     # Get feature importances
     importances = pd.Series(clf.feature_importances_, index=X.columns)
     importances = importances.sort_values(ascending=False)
+
+    important_features = importances[importances > 0.01]
+
+    print("Features with importance > 0.01:")
+    print(important_features)
+
+    cumulative_importance = np.cumsum(importances)
+
+    # Plot
+    plt.figure(figsize=(8, 5))
+    plt.plot(cumulative_importance)
+    plt.axhline(y=0.9, color='r', linestyle='--')
+    plt.xlabel("Number of Top Features")
+    plt.xticks(rotation=45, ha='right')
+    plt.ylabel("Cumulative Importance")
+    plt.title("Cumulative Feature Importance (Decision Tree)")
+    plt.grid(True)
+    plt.tight_layout()
+    scree_path = "/Users/githika/GitHub/data_mining/Evaluation/cumulative_importance.png"
+    plt.savefig(scree_path)
+    plt.clf()
+    plt.close() 
+
 
     # Print top features
     print("Top features by importance:")
