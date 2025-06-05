@@ -1,13 +1,4 @@
-This project explores the dataset SWAN Study of Women's Health Across the Nation (SWAN), 1998-2001: Family Medical History From Visits 02, 03, and 04 (ICPSR 30181). 
-
-Project Organizaiton:
-EDA - folder contains distributions of the features we are interested in. A summary of these findings is provided. 
-Models - folder contians regression models used to assess correlation between features. Folder also contians PCA and clustering done to analyze the features. A summary of these findings is present.
-Evaluation - folder contains evalution done on the various models. A summary with plots of these evaluation metrics is present. 
-
-
 # 🩺 Analyzing Barriers to Women’s Health Care Access  
-**Study:** SWAN (Study of Women’s Health Across the Nation), 1998–2001 – Family Medical History From Visits 02–04
 
 ---
 
@@ -17,9 +8,18 @@ Women not receiving sufficient OB-GYN healthcare may face delays in treatment an
 ---
 
 ## 📊 Dataset  
-- **Source:** [ICPSR 30181 - SWAN Study of Women’s Health Across the Nation (1998–2001)](https://www.icpsr.umich.edu/web/ICPSR/studies/30181)  
-- **Focus:** Family medical history and health behavior from Visits 02, 03, and 04  
-- **Participants:** 292 individuals analyzed  
+**Study: SWAN1** Study of Women's Health Across the Nation (SWAN), 1998-2001: Family Medical History From Visits 02, 03, and 04 (ICPSR 30181)
+- This dataset is referred to as SWAN1 throughout the repo.
+**Study: SWAN2** Study of Women's Health Across the Nation (SWAN): Visit 02 Dataset, [United States], 1998-2000 (ICPSR 29401)
+- This dataset is referred to as SWAN2 throughout the repo.
+
+---
+
+## Repo Organizaiton:
+data - folder contains raw and processed data, terms and description of data.
+EDA - folder contains distributions of all features. A summary of these findings is provided. 
+Evaluation - folder contains evalution (Principle Component Analysis, Decision Trees, Chi-Square Test). A summary with plots of these evaluation metrics is present. 
+presentation.pdf - Comprehensive presentation of entire project. In depth analysis of what is covered in this document. 
 
 ---
 
@@ -49,7 +49,8 @@ The project uses both statistical and machine learning techniques to uncover ins
 
 ### 🔹 PCA Results – SWAN1 + SWAN2 Combined  
 - **PC1:** Visit Frequency  
-- **PC2–5:** Hormone Use & Sister’s Health History  
+- **PC2:** Hormone Use Reason  
+- **PC3–5:** Hormone Use & Sister’s Health History  
 
 ### 🌳 Decision Tree Insights  
 - Identified features with high correlation to inadequate healthcare  
@@ -72,13 +73,15 @@ The project uses both statistical and machine learning techniques to uncover ins
 
 ### 🔹 PCA on Significant Chi-Square Features  
 - **PC1:** Major health conditions (e.g., heart attack, thyroid issues)  
-- **PC2–5:** Psychological help, discrimination, emotional distress, interview language  
+- **PC2:** Reached out to doctor/professional for Psychological help
+- **PC3:** Felt they were discriminated against  
+- **PC4:** Felt emotional distress  
+- **PC5:** Interview language  
 
 ---
 
 ## 📈 Visualizations  
 - Located in `EDA/` and `Evaluation/` folders  
-- Pie charts for race and income distribution  
 - Bar plots for PCA and decision tree feature importances  
 
 ---
@@ -86,8 +89,8 @@ The project uses both statistical and machine learning techniques to uncover ins
 ## 🧠 Conclusions  
 
 Certain factors consistently correlate with inadequate OB-GYN healthcare:
-- **Pap smear not received**
-- **Lack of committed relationship**
+- **Pap smear since last visit**
+- **Married/Committed relationship**
 - **Emotional or physical health issues interfering with daily life**
 
 **Actionable Insight:**  
@@ -110,6 +113,6 @@ Healthcare providers can proactively screen for these factors and schedule check
 
 ## 💡 Value  
 
-This project is a **social science analysis** aimed at improving **health equity**, not commercial investment.  
+This project is a **social science analysis** aimed at improving **health equity**. 
 The findings can inform healthcare providers and policymakers to create more inclusive, proactive care models for women.
 
