@@ -85,9 +85,25 @@ CONTROL2    0.010447
 
     HIP2 - Hip Circumference
 
-    AFRAIDO2 - People act as if they are afraid of you. In your day-to-day life have you had the following experiences:
+    POORSER2  - You believe you receive poorer service than other people at restaurants or stores. In your day-to-day life have you had the following experiences:
 
-    NOTSMAR2: People think not as smart as others. In your day-to-day life have you had the following experiences:
+    DIABDAD2 - Does your dad have diabetes? 
+
+    CONTROL2 - How often have you felt unable to control important things in your life?
+
+    PHYACCO2 - During the past 4 weeks, have you had any of the following problems with your work or other regular daily activities as a result of your physical health? Accomplished less than you would like?
+    
+    HEIGHT2 - Height
+
+    COUGHIN2 - Urinate when coughing
+
+    SPEDAY2 - Survey Completion Date
+
+    AFRAIDO2 - You believe people act as if they are afraid of you. In your day-to-day life have you had the following experiences:
+
+    NOTSMAR2: You believe people think not as smart as others. In your day-to-day life have you had the following experiences:
+
+    WATCHTV2 - Since your last visit did you watch TV. 
 
     BCDIAP12 - how old was your paternal aunt when she was diagnosed with breat cancer
 
@@ -116,7 +132,7 @@ Since your last study visit, have you had a mammogram (an x-ray taken only of th
 
 
 # PCA on Significant Results from Chi Square Test (p < 0.01)
-Principal Component 1:
+Principal Component 1: Health Problems (Heart attack, Angina, osteoporosis, thyroid gland removal, fertility medicine)
   HEARTAT2: 0.1682 - Since your last study visit, has a doctor, nurse practitioner or other health care provider told you that you had a heart attack or treated you for it? <br>
   ANGINA2: 0.1650 - Since your last study visit, has a doctor, nurse practitioner or other health care provider told you that you have Angina or treated you for them?
   OSTEPR12: 0.1641 - Do you take medications to prevent or treat osteoporosis (brittle or thinning bones such as Fosamax, Didronel, Evista, Miacalcin, Rocaltrol)?<br>
@@ -130,14 +146,14 @@ Principal Component 2: Talk to doctor(psychologist, nurse practitioner, physicia
   OTHER2: 0.1738 - Talk to other. In the past year, have you seen or talked with any of the following health care providers or other professionals for treatment of emotional problems?
   PSYCHOL2: 0.1738 - Talk to psychologist. In the past year, have you seen or talked with any of the following health care providers or other professionals for treatment of emotional problems?
 
-Principal Component 3:
+Principal Component 3: Feeling sad/depressed/irritable/mood swings
   FEELBLU2: 0.1542 - Feeling blue past 2 weeks. Thinking back over the past two weeks, how often have you felt blue or depressed?
   NRVOUS2: 0.1501 - Tense/nervous past 2 weeks. Thinking back over the past two weeks, how often have you felt tense or nervous?
   DEPRESS2: 0.1488 - DEPRESS2: Felt depressed past week. How often you have felt or behaved depressed during the past week.
   MOODCHG2: 0.1483 - Frequency mood changes past 2 weeks. Thinking back over the past two weeks, how often have you had frequent mood changes?
   IRRITAB2: 0.1438 -  Irritability past 2 weeks. Thinking back over the past two weeks, how often have you had irritability or grouchiness?
 
-Principal Component 4: 
+Principal Component 4: Felt you were treated with less respect than others due to sexual orientation, income level, physical appearance, age, ethnicity.
     Felt that you were Treated w/less courtesy than others, Treated w/less respect than others, Received poorer service than others, People think not as smart as others, People act as if afraid of you, People think you are dishonest, People act as if better than you, Insulted by other people, Harassed by other people, and/or Ignored by other people for the following reasons:
   BCORIEN2: 0.2571 - Because of sexual orientation
   BCINCML2: 0.2563 - Because of income level
@@ -145,9 +161,9 @@ Principal Component 4:
   BCAGE2: 0.2509 - Because of age
   BCETHN2: 0.2504 - Because of ethnicity
 
-Principal Component 5:
-  LANGSAB2: 0.2655
-  LANGSAC2: 0.2652
-  LANGFHX2: 0.2638
-  LANGSAA2: 0.2630
-  LANGINT2: 0.2624
+Principal Component 5: Interview Language 
+  LANGSAB2: 0.2655 - Interview Language 
+  LANGSAC2: 0.2652 - Interview Language 
+  LANGFHX2: 0.2638 - Interview Language 
+  LANGSAA2: 0.2630 - Interview Language 
+  LANGINT2: 0.2624 - Interview Language 
