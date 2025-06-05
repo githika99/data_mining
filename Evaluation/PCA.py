@@ -35,7 +35,7 @@ def run_pca_and_save_with_scree(df_encoded, save_dir="data_mining/Evaluation/plo
 
     # Save scree plot
     os.makedirs(save_dir, exist_ok=True)
-    scree_path = os.path.join(save_dir, "scree_plot_2.png")
+    scree_path = os.path.join(save_dir, "scree_plot.png")
     plt.savefig(scree_path)
     plt.close()
     print(f"Scree plot saved to {scree_path}")

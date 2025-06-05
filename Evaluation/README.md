@@ -77,6 +77,16 @@ CONTROL2    0.010447
 
     OTHRPRS2 - Did your biological mother have any symptoms such as hot flashes, irregular or heavy periods, sleep problems or mood changes or problems associated with stopping her menstruation
 
+    VLNTHR12 - How many hours a week do you spend doing volunteer work? 
+
+    TIRED2 - In the past 4 weeks, how often did you feel tired? 
+
+    SISAGE12 - How old is your first sister/how old was she when she died?
+
+    HIP2 - Hip Circumference
+
+    AFRAIDO2 - People act as if they are afraid of you. In your day-to-day life have you had the following experiences:
+
     NOTSMAR2: People think not as smart as others. In your day-to-day life have you had the following experiences:
 
     BCDIAP12 - how old was your paternal aunt when she was diagnosed with breat cancer

@@ -3,7 +3,7 @@ import os
 import json
 import matplotlib.pyplot as plt
 
-def plot_and_save_all_distributions(df_encoded, value_to_int, save_dir="data_mining/EDA/Study2/", max_unique=50):
+def plot_and_save_all_distributions(df_encoded, value_to_int, save_dir="data_mining/EDA/SWAN2_Distributions/", max_unique=50):
     colors = ['#ec4899', '#fbcfe8', '#d1d5db', '#6b7280', '#000000']
     int_to_value = {v: k for k, v in value_to_int.items()}
     os.makedirs(save_dir, exist_ok=True)
@@ -35,6 +35,52 @@ def plot_and_save_all_distributions(df_encoded, value_to_int, save_dir="data_min
         filename = f"{col_name}.png".replace("/", "_")
         plt.savefig(os.path.join(save_dir, filename))
         plt.close('all')
+
+def plot_race_and_income(save_dir="data_mining/EDA/SWAN2_Distributions/"):
+    # code to save distributions of Race and Income.
+    # these values were manually extracted from data_mining/data/SWAN2_Codebook_Stats.pdf
+    race = {48.5: "Caucasian/White Non Hispanic", 27: "Black/African American", 
+            8.5: "Chinese/Chinese American", 6.5: "Hispanic", 9.6: "Japanese/Japanese American"}
+    
+    income_level = {10.5: "Less than $19,999", 27.3: "$20,000 to $49,999", 37.1:"$50,000 to $99,999", 19: "$100,000 or More"}
+    os.makedirs(save_dir, exist_ok=True)
+    colors = ['#ec4899', '#fbcfe8', '#d1d5db', '#6b7280', '#4b5563'] 
+
+     # Plot race distribution
+    plt.figure(figsize=(10, 8))
+    wedges, texts, autotexts = plt.pie(
+        race.keys(), 
+        autopct='%1.1f%%', 
+        startangle=140, 
+        colors=colors, 
+        textprops=dict(color="white")
+    )
+    plt.title('Race Distribution')
+    plt.legend(wedges, race.values(), title="Race", loc="center left", bbox_to_anchor=(1, 0, 0.5, 1))
+    plt.axis('equal')
+    plt.tight_layout()
+    plt.savefig(os.path.join(save_dir, 'race_distribution.png'))
+    plt.close()
+
+    # Plot income distribution
+    plt.figure(figsize=(10, 8))
+    wedges, texts, autotexts = plt.pie(
+        income_level.keys(), 
+        autopct='%1.1f%%', 
+        startangle=140, 
+        colors=colors[:4], 
+        textprops=dict(color="white")
+    )
+    plt.title('Income Level Distribution')
+    plt.legend(wedges, income_level.values(), title="Income", loc="center left", bbox_to_anchor=(1, 0, 0.5, 1))
+    plt.axis('equal')
+    plt.tight_layout()
+    plt.savefig(os.path.join(save_dir, 'income_distribution.png'))
+    plt.close()
+
+
+
+
 
 
 def process_data(df1, df2, name):
@@ -72,16 +118,16 @@ def process_data(df1, df2, name):
     return df_encoded, value_to_int
 
 
-
-
 if __name__ == "__main__":
+    plot_race_and_income()
+
+    """
     # Load TSV file (including header as first row)
     df1 = pd.read_csv('data_mining//data/Raw_Data/SWAN1.tsv', sep='\t', dtype=str, header=None, on_bad_lines='skip')
     df2 = pd.read_csv('data_mining/data/Raw_Data/SWAN2.tsv', sep='\t', dtype=str, header=None)
 
     df1, value_to_int1 = process_data(df1, df2, 'study1_2_encoded.csv') 
 
-    """
     df = pd.read_csv('data_mining/data/Raw_Data/SWAN2.tsv', sep='\t', dtype=str, header=None)
     df, value_to_int = process_data(df, 'study2_encoded.csv') 
     plot_and_save_all_distributions(df, value_to_int)
