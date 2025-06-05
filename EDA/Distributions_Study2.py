@@ -63,7 +63,7 @@ def process_data(df1, df2, name):
     df_encoded = merged_df.applymap(lambda x: value_to_int[x])
 
     # Save mapping to JSON
-    with open("value_to_int.json", "w") as f:
+    with open("data_mining/data/Processed_Data/value_to_int.json", "w") as f:
         json.dump(value_to_int, f, indent=2)
 
     # Save encoded DataFrame
